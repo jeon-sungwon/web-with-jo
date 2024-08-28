@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Layout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row; /* 전체 레이아웃을 가로로 나열 */
+        height: 100vh; /* 화면 전체 높이 */
+      }
+
+      .sidebar {
+        flex: 0 0 100px; /* 고정 너비 사이드바 */
+        background-color: #f1f1f1;
+        border-right: 1px solid #ddd;
+        display: flex;
+        flex-direction: column; /* 수직 정렬 */
+        justify-content: space-between; /* 공간을 균등하게 분배 */
+        padding: 10px;
+        box-sizing: border-box; /* 패딩을 포함한 너비와 높이 설정 */
+      }
+
+      .main-content {
+        flex: 1; /* 남은 공간 모두 차지 */
+        display: flex;
+        flex-direction: column; /* 상단 네비게이션과 메인 콘텐츠 영역을 수직으로 배치 */
+        box-sizing: border-box;
+      }
+
+      .navbar {
+        height: 60px; /* 고정 높이 네비게이션 바 */
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between; /* 가로로 공간을 균등하게 분배 */
+        align-items: center; /* 수직 가운데 정렬 */
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+
+      .content {
+        flex: 1; /* 남은 공간을 모두 차지 */
+        padding: 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+      }
+
+      .box {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #000;
+        margin: 5px;
+      }
+
+      .large-box {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar">
+        <div class="box"></div>
+        <div class="large-box"></div>
+      </div>
+
+      <!-- 메인 콘텐츠 영역 -->
+      <div class="main-content">
+        <!-- 상단 네비게이션 바 -->
+        <div class="navbar">
+          <div class="box"></div>
+          <div class="large-box"></div>
+          <div class="box"></div>
+        </div>
+
+        <!-- 메인 콘텐츠 -->
+        <div class="content">
+          <!-- 실제 콘텐츠가 들어갈 공간 -->
+          <div class="large-box"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
